@@ -1,0 +1,19 @@
+<div id="container">
+    <div id="modal">
+        <div id="main">
+            <div class="content">
+{% set blocks = entry.accordion.all() %}
+{% if blocks|length %}
+    <ul>
+        {% for block in blocks %}
+
+        <p>{{ block.accordionTitle }}</p>
+        <p>{{ block.mainContent }}</p>
+        
+        {% endfor %}
+    </ul>
+{% endif %}
+            </div>
+        </div>
+      </div>
+</div>

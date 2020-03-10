@@ -1,0 +1,152 @@
+dateModified: 1583854380
+email:
+  fromEmail: itstuartsmith@gmail.com
+  fromName: craft-playground
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  aa262672-4fef-4032-a8a3-4ddee152e9ff:
+    name: Common
+fields:
+  c7edace4-f4ad-4bfe-81a9-771ff5e1927e:
+    contentColumnType: string
+    fieldGroup: aa262672-4fef-4032-a8a3-4ddee152e9ff
+    handle: accordion
+    instructions: ''
+    name: Accordion
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_accordion}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+matrixBlockTypes:
+  24486bae-aad8-4afc-838b-3d19945925b1:
+    field: c7edace4-f4ad-4bfe-81a9-771ff5e1927e
+    fieldLayouts:
+      c03c0b3a-f760-4df3-b008-825c796d4661:
+        tabs:
+          -
+            fields:
+              7e621006-fa58-4543-ac27-1e1756cfdbc6:
+                required: false
+                sortOrder: 2
+              c73243fe-dec7-4f17-b81e-505564560e1f:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      7e621006-fa58-4543-ac27-1e1756cfdbc6:
+        contentColumnType: text
+        fieldGroup: null
+        handle: mainContent
+        instructions: ''
+        name: 'Main content'
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: ''
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+      c73243fe-dec7-4f17-b81e-505564560e1f:
+        contentColumnType: text
+        fieldGroup: null
+        handle: accordionTitle
+        instructions: ''
+        name: Title
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: 'Enter field'
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: accordion
+    name: Accordion
+    sortOrder: 1
+plugins:
+  kint:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      kintDisplayTheme: solarized.css
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+sections:
+  c5f95bf5-0a06-490d-b0b3-f7c901fa6a37:
+    enableVersioning: true
+    entryTypes:
+      53dd6128-481c-48dd-8071-ec46f912dd72:
+        fieldLayouts:
+          b521c28f-8adf-4b69-9181-2bb4eff7f3d5:
+            tabs:
+              -
+                fields:
+                  c7edace4-f4ad-4bfe-81a9-771ff5e1927e:
+                    required: false
+                    sortOrder: 1
+                name: 'Tab 1'
+                sortOrder: 1
+        handle: accordion
+        hasTitleField: true
+        name: Accordion
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: accordion
+    name: Accordion
+    propagationMethod: all
+    siteSettings:
+      94949589-62c7-4508-b8fb-19a48dff4c9b:
+        enabledByDefault: true
+        hasUrls: true
+        template: accordion
+        uriFormat: accordion
+    type: channel
+siteGroups:
+  ab544d6d-36ec-4b7c-94de-b06c3e3db8e7:
+    name: craft-playground
+sites:
+  94949589-62c7-4508-b8fb-19a48dff4c9b:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: craft-playground
+    primary: true
+    siteGroup: ab544d6d-36ec-4b7c-94de-b06c3e3db8e7
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: craft-playground
+  schemaVersion: 3.4.10
+  timeZone: Europe/London
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
