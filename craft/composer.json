@@ -1,8 +1,11 @@
 {
   "require": {
     "craftcms/cms": "^3.4.0",
+    "craftcms/element-api": "2.6.0",
     "craftcms/redactor": "2.6.0.1",
+    "craftplugin/craftplugin": "^1.0.0",
     "mildlygeeky/craft-kint": "1.0.0",
+    "nystudio107/craft-instantanalytics": "1.1.5",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
@@ -21,5 +24,14 @@
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ]
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../craftplugin",
+      "options": {
+        "symlink": true
+      }
+    }
+  ]
 }
