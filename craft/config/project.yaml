@@ -1,4 +1,4 @@
-dateModified: 1583854380
+dateModified: 1583938200
 email:
   fromEmail: itstuartsmith@gmail.com
   fromName: craft-playground
@@ -7,67 +7,74 @@ fieldGroups:
   aa262672-4fef-4032-a8a3-4ddee152e9ff:
     name: Common
 fields:
-  c7edace4-f4ad-4bfe-81a9-771ff5e1927e:
+  278fae23-10c9-483e-bbbd-66b51d910de1:
     contentColumnType: string
     fieldGroup: aa262672-4fef-4032-a8a3-4ddee152e9ff
-    handle: accordion
+    handle: accordionField
     instructions: ''
-    name: Accordion
+    name: 'Accordion Field'
     searchable: true
     settings:
-      contentTable: '{{%matrixcontent_accordion}}'
+      contentTable: '{{%matrixcontent_accordionfield}}'
       maxBlocks: ''
       minBlocks: ''
       propagationMethod: all
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  bc502cc0-05c7-4e7f-969f-0241f84d6fe8:
+    contentColumnType: text
+    fieldGroup: aa262672-4fef-4032-a8a3-4ddee152e9ff
+    handle: heroText
+    instructions: ''
+    name: 'Hero text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 matrixBlockTypes:
-  24486bae-aad8-4afc-838b-3d19945925b1:
-    field: c7edace4-f4ad-4bfe-81a9-771ff5e1927e
+  c2e81262-d385-49cd-b5ad-83909a47fc16:
+    field: 278fae23-10c9-483e-bbbd-66b51d910de1
     fieldLayouts:
-      c03c0b3a-f760-4df3-b008-825c796d4661:
+      ad1b65d7-1fb8-433c-9ea5-539bfa3102fb:
         tabs:
           -
             fields:
-              7e621006-fa58-4543-ac27-1e1756cfdbc6:
+              28df69ef-303e-4f25-a8ef-5799fac7211c:
                 required: false
                 sortOrder: 2
-              c73243fe-dec7-4f17-b81e-505564560e1f:
-                required: true
+              67f7373f-7973-45a1-90bd-5afa856434a8:
+                required: false
                 sortOrder: 1
             name: Content
             sortOrder: 1
     fields:
-      7e621006-fa58-4543-ac27-1e1756cfdbc6:
-        contentColumnType: text
+      28df69ef-303e-4f25-a8ef-5799fac7211c:
+        contentColumnType: string(7)
         fieldGroup: null
-        handle: mainContent
+        handle: accordionDescription
         instructions: ''
-        name: 'Main content'
+        name: 'Accordion description'
         searchable: true
         settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
+          defaultColor: ''
         translationKeyFormat: null
         translationMethod: none
-        type: craft\redactor\Field
-      c73243fe-dec7-4f17-b81e-505564560e1f:
+        type: craft\fields\Color
+      67f7373f-7973-45a1-90bd-5afa856434a8:
         contentColumnType: text
         fieldGroup: null
-        handle: accordionTitle
+        handle: accordionText
         instructions: ''
-        name: Title
+        name: 'accordion text'
         searchable: true
         settings:
           byteLimit: null
@@ -76,14 +83,26 @@ matrixBlockTypes:
           columnType: null
           initialRows: '4'
           multiline: ''
-          placeholder: 'Enter field'
+          placeholder: ''
         translationKeyFormat: null
         translationMethod: none
         type: craft\fields\PlainText
-    handle: accordion
-    name: Accordion
+    handle: accordiontext
+    name: accordionText
     sortOrder: 1
 plugins:
+  craftplugin:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  instant-analytics:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   kint:
     edition: standard
     enabled: true
@@ -95,35 +114,68 @@ plugins:
     enabled: true
     schemaVersion: 2.3.0
 sections:
-  c5f95bf5-0a06-490d-b0b3-f7c901fa6a37:
+  9d03cd59-15a3-40bf-84d1-85e4ed831bca:
     enableVersioning: true
     entryTypes:
-      53dd6128-481c-48dd-8071-ec46f912dd72:
+      0d495f0f-1d50-4302-bc4d-47e5e755dc16:
         fieldLayouts:
-          b521c28f-8adf-4b69-9181-2bb4eff7f3d5:
+          40a48357-7339-4048-8bc4-5156ce26a3f5:
             tabs:
               -
                 fields:
-                  c7edace4-f4ad-4bfe-81a9-771ff5e1927e:
+                  bc502cc0-05c7-4e7f-969f-0241f84d6fe8:
                     required: false
                     sortOrder: 1
                 name: 'Tab 1'
                 sortOrder: 1
-        handle: accordion
+        handle: firstSection
         hasTitleField: true
-        name: Accordion
+        name: 'First section'
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-    handle: accordion
-    name: Accordion
+    handle: firstSection
+    name: 'First section'
     propagationMethod: all
     siteSettings:
       94949589-62c7-4508-b8fb-19a48dff4c9b:
         enabledByDefault: true
         hasUrls: true
-        template: accordion
-        uriFormat: accordion
+        template: first-section
+        uriFormat: 'first-section{slug}'
+    type: channel
+  d810bf93-6768-41a9-bba3-936fa231f9b9:
+    enableVersioning: true
+    entryTypes:
+      be8340a6-3e58-49e0-b7d3-1fe196045c8b:
+        fieldLayouts:
+          734e4f07-21e1-4872-9f81-b48746f367a1:
+            tabs:
+              -
+                fields:
+                  278fae23-10c9-483e-bbbd-66b51d910de1:
+                    required: false
+                    sortOrder: 1
+                  bc502cc0-05c7-4e7f-969f-0241f84d6fe8:
+                    required: false
+                    sortOrder: 2
+                name: 'Tab 1'
+                sortOrder: 1
+        handle: secondSection
+        hasTitleField: true
+        name: 'second section'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: secondSection
+    name: 'Second section'
+    propagationMethod: all
+    siteSettings:
+      94949589-62c7-4508-b8fb-19a48dff4c9b:
+        enabledByDefault: true
+        hasUrls: true
+        template: first-section
+        uriFormat: 'second-section/{slug}'
     type: channel
 siteGroups:
   ab544d6d-36ec-4b7c-94de-b06c3e3db8e7:
