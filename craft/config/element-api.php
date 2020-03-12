@@ -2,6 +2,9 @@
 
 use craft\elements\Entry;
 use craft\helpers\UrlHelper;
+use modules\FirstSection;
+
+$newclass = new FirstSection();
 
 return [
   'endpoints' => [
@@ -11,14 +14,13 @@ return [
         'criteria' => ['section' => 'secondSection'],
         'transformer' => function (Entry $entry) {
           $accordionData = [];
-          foreach ($entry->accordionField as $block){
+          foreach ($entry->accordionField as $block) {
             $accordionData[] = [
-              //'text' => $block->type->attributeConfigs,
+              'id' => $entry->id,
               'header' => $block->accordionText,
-              'hex' => (string)$block->accordionDescription,
-              'jsonUrl' => UrlHelper::url("second-section/{$entry->id}.json"),
+              'hex_colour' => (string) $block->accordionDescription,
             ];
-        }
+          }
           return [
             'accordion_data' => $accordionData,
           ];
@@ -30,17 +32,26 @@ return [
         },
       ];
     },
-    'api/accordion<entryId:\d+>.json' => function ($entryId) {
+    'api/accordion/id=<entryId:\d+>' => function ($entryId) {
       return [
         'elementType' => Entry::class,
         'criteria' => ['id' => $entryId],
         'one' => true,
-        'transformer' => function(Entry $entry) {
-    return [
-        'title' => $entry,
-        'url' => $entry->url,
-    ];
-},
+        'transformer' => function (Entry $entry) {
+          $accordionData = [];
+          foreach ($entry->accordionField as $block) {
+            $accordionData[] = [
+              'id' => $entry->id,
+              'unique_id' => $block->id,
+              //'text' => $block->type->attributeConfigs,
+              'header' => $block->accordionText,
+              'hex_colour' => (string) $block->accordionDescription,
+            ];
+          }
+          return [
+            'accordion_data' => $accordionData,
+          ];
+        }
       ];
     },
   ]
