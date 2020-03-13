@@ -4,8 +4,6 @@ use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 use modules\FirstSection;
 
-$newclass = new FirstSection();
-
 return [
   'endpoints' => [
     'api/accordion' => function () {
